@@ -1,0 +1,44 @@
+spring:
+  thymeleaf:
+    mode: HTML
+  #  mvc:
+  #    favicon:
+  #      enabled: false #关闭springBoot默认的网站小叶子图标
+  profiles:
+    active: pro  #指定使用的yml文件
+  mail:
+    #QQ邮箱配置
+    port: 465
+    host: smtp.qq.com  #QQ邮箱服务器
+    username: xxx@qq.com  #发送者QQ邮箱
+    password: xxx  #发送者QQ邮箱第三方授权码
+    default-encoding: UTF-8  #邮件编码类型
+    properties:
+      mail:
+        timeout:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+          starttls:
+            enable: true
+            required: true
+mail.fromMail.addr: xxx@qq.com  #发送者QQ邮箱
+
+comment.avatar: http://cdn.zhangdc.top/avatar.png  #游客默认头像
+
+#QQ登录后指定用户为管理员的依据，用来识别博主是谁
+admin.openid:
+
+#七牛云配置
+qiniu:
+  accessKey:
+  secretKey:
+  bucket: yizhidachang
+  path: cdn.zhangdc.top
+
+#上传图片缓存路径，部署到linux需要换成linux路径并赋予读写权限
+baseUploadUrl: /usr/java/qiniu_temp/
+#baseUploadUrl: d://qiniu_temp/
+server:
+  port: 80
